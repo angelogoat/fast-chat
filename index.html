@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site de Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="menu" onclick="toggleMenu()">☰</div>
+        <nav id="sidebar" class="sidebar">
+            <a href="#home" onclick="closeMenu()">Accueil</a>
+            <a href="#why" onclick="closeMenu()">Pourquoi ce site?</a>
+            <a href="#how" onclick="closeMenu()">Comment ça fonctionne?</a>
+            <a href="#chat">Recherchez vos amis</a>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="page">
+            <h1>Bienvenue sur Mon Site de Chat</h1>
+            <p>Un endroit pour discuter avec vos amis et rencontrer de nouvelles personnes.</p>
+            <div class="chat-icon" onclick="openChat()">💬</div>
+        </section>
+        <section id="why" class="page">
+            <h2>Pourquoi ce site ?</h2>
+            <p>Ce site a été créé pour offrir une plateforme simple et efficace de communication en ligne.</p>
+        </section>
+        <section id="how" class="page">
+            <h2>Comment ça fonctionne ?</h2>
+            <p>Connectez-vous, trouvez vos amis et commencez à discuter en temps réel.</p>
+            <h2>En quoi il est meilleur que les autres réseaux sociaux ?</h2>
+            <p>Ce site se distingue par sa simplicité, sa rapidité et son orientation vers la qualité des interactions plutôt que la quantité.</p>
+        </section>
+        <section id="chat">
+            <div id="chat-window" class="chat-window">
+                <div class="chat-header">
+                    <span>Chat</span>
+                    <button onclick="closeChat()">X</button>
+                </div>
+                <div class="chat-body" id="chat-body">
+                    <!-- Chat messages will go here -->
+                </div>
+                <div class="chat-footer">
+                    <input type="text" id="chat-input" placeholder="Tapez votre message...">
+                    <button onclick="sendMessage()">Envoyer</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
